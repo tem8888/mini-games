@@ -1,0 +1,33 @@
+.gameCard {
+  display: block;
+  width: 320px;
+  min-height: 420px;
+  padding: 5px 8px;
+  border: 1px solid var(--darkblue);
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+  background-color: rgba(156, 202, 120, 0.9);
+  overflow: hidden;
+  text-align: left;
+}
+.gameCard:hover {
+  background-color: rgba(144, 190, 109, 1);
+  transition: background-color 250ms ease;
+}
+.title {
+  text-align: center;
+}
+
+.gameCardImg {
+  width: 220px;
+  height: 260px;
+  margin: 10px auto;
+}
+.gameCardImg img {
+  width: 100%;
+  border-radius: 8px;
+}
+.settingsList {
+  margin-top: 8px;
+  line-height: 1.15;
+}

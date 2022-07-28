@@ -1,13 +1,66 @@
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --white: #e3f5dc;
+  --green: #43AA8B;
+  --light-green: rgb(144, 190, 109);
+  --red: #F94144;
+  --yellow: #F9C74F;
+  --darkblue: #577590;
+  --darkblue-hover: #4f6c85;
+  --btn-hover-color: rgba(87, 117, 144, 0.2);
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e3f5dc;
+  background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+}
+
+table {
+  border-spacing: 0.8rem;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hide {
+  visibility: hidden;
+}
+
+ /* CSS Transitions */
+ .arrow-enter {
+	opacity: 0	;
+}
+.arrow-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+.arrow-exit {
+	opacity: 1;
+}
+.arrow-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
 }

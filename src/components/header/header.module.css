@@ -1,0 +1,27 @@
+/* Header */
+.header {
+  position: relative;
+  background-color: var(--darkblue);
+  width: 100%;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.3);
+}
+.headerLink {
+  position: relative;
+  width: 100%;
+}
+.headerLink a {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  left: 0;
+  top: 20px;
+}
+.headerLink a:hover {
+  color: #d7e7d0;
+}
+.title {
+  padding: 1rem 0;
+  color: var(--white);
+}
