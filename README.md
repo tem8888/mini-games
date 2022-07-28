@@ -13,4 +13,4 @@ Also in the future i plan to create more games.
 
 ## Demo
 
-Here is a working live demo: https://fmtransfers-prod-tem8888.vercel.app/
+Here is a working live demo: https://tem8888.github.io/mini-games/
