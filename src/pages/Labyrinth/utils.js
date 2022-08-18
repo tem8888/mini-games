@@ -29,17 +29,6 @@ export function getCurrentPosition(position, direction = '') {
   return newPosition;
 }
 
-export function setIntervalX(callback, delay, repetitions) {
-  let x = 0;
-  const intervalId = setInterval(() => {
-    callback(x);
-    x++;
-    if (x >= repetitions) {
-      clearInterval(intervalId);
-    }
-  }, delay);
-}
-
 export function getCellId(position) {
   return (position.row * COLUMNS - COLUMNS + position.col).toString();
 }

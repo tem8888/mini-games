@@ -3,6 +3,8 @@ import GameCard from './gamecard/GameCard';
 import styles from './home.module.css';
 
 const Home = () => {
+  console.log('Home');
+
   return (
     <div className="container">
       <div className={styles.gamesList}>

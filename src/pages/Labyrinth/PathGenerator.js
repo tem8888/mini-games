@@ -1,4 +1,4 @@
-import { useEffect, createRef } from 'react';
+import { useEffect, createRef, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import {
@@ -8,7 +8,7 @@ import {
   BsFillArrowLeftSquareFill,
 } from 'react-icons/bs';
 
-import { resetState, setFinalPosition, setPath, setPathBuild } from './labyrinthReducer';
+import { setFinalPosition, setPath, setPathBuild } from './labyrinthReducer';
 import styles from './labyrinth.module.css';
 import { getAvailableRoutes, getCurrentPosition, get_random } from './utils';
 import { STEPS, DELAY } from './config';
@@ -20,13 +20,16 @@ const arrows = {
   left: <BsFillArrowLeftSquareFill size={50} color={'#577590'} />,
 };
 
-export default function PathGenerator({ isNewGame }) {
+const PathGenerator = (props) => {
+  console.log('Path Generator');
+
   const dispatch = useDispatch();
   const path = useSelector((state) => state.labyrinth.path); // => ['right', 'up', ...]
   const positionInitial = useSelector((state) => state.labyrinth.position.initial); // => {row: number, col: number}
 
   useEffect(() => {
-    if (isNewGame) {
+    // запускаем таймер при начале новой игры
+    if (props.isNewGame) {
       let currentPosition = positionInitial;
       let direction = '';
       let stepCounter = 0;
@@ -51,13 +54,7 @@ export default function PathGenerator({ isNewGame }) {
         dispatch(setPathBuild(false));
       };
     }
-  }, [isNewGame, positionInitial, dispatch]);
-
-  useEffect(() => {
-    // В случае размонтирования компонента сбрасываем стейт
-    // Создали новый useEffect, чтобы не иметь лишних зависимостей
-    return () => dispatch(resetState());
-  }, [dispatch]);
+  }, [props.isNewGame, positionInitial, dispatch]);
 
   return (
     <div className={styles.pathWrapper}>
@@ -81,4 +78,6 @@ export default function PathGenerator({ isNewGame }) {
       })}
     </div>
   );
-}
+};
+
+export default memo(PathGenerator);
