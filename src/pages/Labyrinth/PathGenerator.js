@@ -1,4 +1,5 @@
 import { useEffect, createRef, memo } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import {
@@ -81,3 +82,7 @@ const PathGenerator = (props) => {
 };
 
 export default memo(PathGenerator);
+
+PathGenerator.propTypes = {
+  isNewGame: PropTypes.bool,
+};

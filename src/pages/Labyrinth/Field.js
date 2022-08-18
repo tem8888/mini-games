@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MdEmojiPeople, MdDirectionsRun } from 'react-icons/md';
 import { BsFillHandThumbsDownFill, BsFillHandThumbsUpFill } from 'react-icons/bs';
 
@@ -93,3 +94,21 @@ const Field = (props) => {
 };
 
 export default React.memo(Field);
+
+Field.propTypes = {
+  field: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+  selectedCell: PropTypes.number,
+  position: PropTypes.shape({
+    initial: PropTypes.shape({
+      row: PropTypes.number,
+      col: PropTypes.number,
+    }),
+    current: PropTypes.shape({
+      row: PropTypes.number,
+      col: PropTypes.number,
+    }),
+  }),
+  isNewGame: PropTypes.bool,
+  isPathBuild: PropTypes.bool,
+  handleCellClick: PropTypes.func,
+};
