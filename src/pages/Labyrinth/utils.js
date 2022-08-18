@@ -30,5 +30,5 @@ export function getCurrentPosition(position, direction = '') {
 }
 
 export function getCellId(position) {
-  return (position.row * COLUMNS - COLUMNS + position.col).toString();
+  return position.row * COLUMNS - COLUMNS + position.col;
 }

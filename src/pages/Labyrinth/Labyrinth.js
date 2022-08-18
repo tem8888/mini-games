@@ -35,7 +35,7 @@ export default function Labyrinth() {
       // Блокируем нажатие на ячейку до тех пор, пока не сгенерится весь маршрут
       // и пока включен флаг текущей игры
       if (!isPathBuild && isNewGame) {
-        dispatch(setSelectedCell(e.currentTarget.id));
+        dispatch(setSelectedCell(Number(e.currentTarget.id)));
         dispatch(setEndGame());
       }
     },
